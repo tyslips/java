@@ -1,0 +1,69 @@
+Q1
+
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Patient Details</title>
+</head>
+<body>
+<h2>Patient Details</h2>
+<table border="1">
+  <tr>
+    <th>Patient Number</th>
+    <th>Patient Name</th>
+    <th>Address</th>
+    <th>Age</th>
+    <th>Disease</th>
+  </tr>
+  <%
+  String[][] patients = {
+        {"P001", "John Doe", "123 Main St", "35", "Fever"},
+        {"P002", "Jane Smith", "456 Elm St", "42", "Headache"},
+        {"P003", "David Johnson", "789 Oak St", "28", "Allergy"}
+    };
+        for (String[] patient : patients) {
+  %>
+  <tr>
+    <td><%= patient[0] %></td>
+    <td><%= patient[1] %></td>
+    <td><%= patient[2] %></td>
+    <td><%= patient[3] %></td>
+    <td><%= patient[4] %></td>
+  </tr>
+  <%
+    }
+  %>
+</table>
+</body>
+</html>
+
+Q2
+
+import java.util.*;
+
+public class Q2 {
+    public static void main(String args[]) {
+        LinkedList<String> l1 = new LinkedList<String>();
+
+        l1.add("Apple");
+        l1.add("Banana");
+        l1.add("Orange");
+
+        System.out.println("\nOriginal linked list: ");
+        System.out.println(l1);
+
+        l1.removeFirst();
+
+        System.out.println("\nLinked list after removing the first element: ");
+        System.out.println(l1);
+
+        System.out.println("\n- Linked list in reverse order - \n");
+
+        ListIterator<String> itr = l1.listIterator(l1.size());
+        while(itr.hasPrevious())
+            System.out.println(itr.previous());
+    }
+}
+
