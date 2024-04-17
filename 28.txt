@@ -15,15 +15,10 @@ Q1
         <input type="submit" value="Reverse">
     </form>
     <%
-        // Get the input string from the request parameter
         String inputString = request.getParameter("inputString");
-
-        // Check if the input string is not null or empty
         if (inputString != null && !inputString.isEmpty()) {
-            // Reverse the input string
             StringBuilder reversedString = new StringBuilder(inputString).reverse();
 
-            // Display the reversed string
     %>
             <h2>Reversed String:</h2>
             <p><%= reversedString.toString() %></p>
@@ -38,11 +33,9 @@ Q2
 
 public class Q2 {
     public static void main(String[] args) {
-        // Create and start a new thread
         Thread thread = new Thread(new MyRunnable());
         thread.start();
         
-        // Display the name of the main thread
         System.out.println("Main thread name: " + Thread.currentThread().getName());
     }
 }
